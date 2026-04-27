@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.aurelianflo/core",
+  "title": "AurelianFlo",
+  "description": "Remote MCP server for OFAC wallet screening, crypto wallet sanctions checks, EDD memos, Monte Carlo reports, and document output.",
+  "repository": {
+    "url": "https://github.com/kelm2021/aurelianflo-public",
+    "source": "github",
+    "subfolder": "submission"
+  },
+  "version": "0.1.2",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.aurelianflo.com/mcp"
+    }
+  ]
+}
