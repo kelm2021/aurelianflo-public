@@ -33,6 +33,20 @@ private repository.
 
 ## Install
 
+Claude Custom Connector:
+
+1. Open Claude settings.
+2. Go to **Customize** > **Connectors**.
+3. Add a custom connector named `AurelianFlo`.
+4. Use this MCP server URL:
+
+```text
+https://api.aurelianflo.com/mcp
+```
+
+Claude Desktop does not use `claude_desktop_config.json` for remote MCP
+servers.
+
 Direct Codex MCP install:
 
 ```bash
