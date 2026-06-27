@@ -19,15 +19,17 @@ private repository.
 
 ## MCP Tools
 
-- `server.capabilities`
-- `wallet.ofac.report`
-- `wallet.ofac.screen`
-- `wallet.ofac.batch`
-- `compliance.edd.report`
-- `simulation.montecarlo.report`
-- `simulation.montecarlo.decision`
-- `report.pdf.generate`
-- `report.docx.generate`
+- `server_capabilities`
+- `queue_saved_list`
+- `report_saved_retrieve`
+- `wallet_ofac_report`
+- `wallet_ofac_screen`
+- `wallet_ofac_batch`
+- `compliance_edd_report`
+- `compliance_exposure_forecast`
+- `compliance_queue_optimize`
+- `report_pdf_generate`
+- `report_docx_generate`
 
 ## Install
 
