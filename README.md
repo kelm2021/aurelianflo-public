@@ -53,11 +53,10 @@ Direct Codex MCP install:
 codex mcp add aurelianflo --url https://api.aurelianflo.com/mcp
 ```
 
-Smithery listing:
-
-```bash
-smithery mcp add aurelianflo/core
-```
+The direct endpoint is operated by AurelianFlo. No end-user OAuth or API key is
+required. Call `server_capabilities` to verify the connection for free. Paid tools
+require an x402-capable client and wallet to authorize USDC payments on Base;
+adding an MCP connection alone does not enable paid execution.
 
 AgentCash discovery:
 
