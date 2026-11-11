@@ -14,6 +14,8 @@ private repository.
 - MCP endpoint (sign in with email): `https://api.aurelianflo.com/mcp/account`
 - MCP endpoint (no sign-in; API key or x402): `https://api.aurelianflo.com/mcp`
 - Server card: `https://api.aurelianflo.com/.well-known/mcp/server-card.json`
+- Signing keys for result verification: `https://api.aurelianflo.com/.well-known/aurelianflo-signing-keys.json`
+- Setup guide: `https://aurelianflo.com/server-card`
 - Documentation: `https://api.aurelianflo.com/mcp/docs`
 - Privacy: `https://api.aurelianflo.com/mcp/privacy`
 - Support: `https://api.aurelianflo.com/mcp/support`
