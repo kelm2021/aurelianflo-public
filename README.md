@@ -19,17 +19,28 @@ private repository.
 
 ## MCP Tools
 
-- `server_capabilities`
-- `queue_saved_list`
-- `report_saved_retrieve`
-- `wallet_ofac_report`
-- `wallet_ofac_screen`
-- `wallet_ofac_batch`
-- `compliance_edd_report`
-- `compliance_exposure_forecast`
-- `compliance_queue_optimize`
-- `report_pdf_generate`
-- `report_docx_generate`
+- `server_capabilities` (free): connection check, prices, how to pay, free test
+  inputs, and sample responses
+- `wallet_screen`: screen 1-100 wallets against OFAC lists, with address
+  validation, a proceed-or-review decision, and signed provenance. Optional
+  PDF/DOCX report and, for one EVM wallet, indirect exposure through
+  counterparties
+- `compliance_edd_report`: enhanced due diligence memo with wallet and
+  subject-name screening
+- `compliance_exposure_forecast`: OFAC exposure forecast with base rates and
+  model limitations
+- `compliance_queue_optimize`: review queue prioritization
+- `screening_verify` (free): check that a stored result is authentic and
+  unchanged
+- `saved_results` (account): list, fetch, or delete results saved with
+  `save: true`
+- `wallet_watchlist` (account): watch wallets and get alerted when one is
+  designated
+
+Older tool names (`wallet_ofac_screen`, `wallet_ofac_report`,
+`wallet_ofac_batch`, `report_pdf_generate`, `report_docx_generate`,
+`queue_saved_list`, `report_saved_retrieve`) still work but are no longer
+listed.
 
 ## Install
 
@@ -53,10 +64,20 @@ Direct Codex MCP install:
 codex mcp add aurelianflo --url https://api.aurelianflo.com/mcp
 ```
 
-The direct endpoint is operated by AurelianFlo. No end-user OAuth or API key is
-required. Call `server_capabilities` to verify the connection for free. Paid tools
-require an x402-capable client and wallet to authorize USDC payments on Base;
-adding an MCP connection alone does not enable paid execution.
+The direct endpoint is operated by AurelianFlo. No sign-in is required to
+connect. Call `server_capabilities` to verify the connection for free; it also
+lists current prices, the ways to pay, and sample responses.
+
+## Trying and Paying
+
+- **Free test inputs:** calls that use only the test addresses published in
+  `server_capabilities` run free, with real results marked `mode: "test"`.
+- **API key:** send `Authorization: Bearer afk_...` with each request. Keys are
+  issued on request through support.
+- **x402:** use an x402-capable client and wallet to authorize USDC payments on
+  Base. Payment settles only when the tool succeeds.
+
+Adding an MCP connection alone does not enable paid execution.
 
 AgentCash discovery:
 
