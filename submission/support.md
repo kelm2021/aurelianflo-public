@@ -12,10 +12,12 @@ HTTP endpoints.
 ## Support Scope
 
 - Connection and configuration issues
+- Sign-in, account, free allowance, and API key questions, including account
+  deletion
 - Payment and settlement issues related to x402 tool calls
 - Unexpected tool failures or invalid responses
-- Questions about supported inputs for compliance screening, vendor due
-  diligence, simulation reporting, and document generation
+- Questions about supported inputs for wallet screening, enhanced due diligence
+  memos, exposure forecasts, review queues, saved results, and watchlists
 
 ## Response Expectations
 
