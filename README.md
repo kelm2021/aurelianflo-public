@@ -11,7 +11,8 @@ private repository.
 
 - UI: `https://aurelianflo.com`
 - API origin: `https://api.aurelianflo.com`
-- MCP endpoint: `https://api.aurelianflo.com/mcp`
+- MCP endpoint (sign in with email): `https://api.aurelianflo.com/mcp/account`
+- MCP endpoint (no sign-in; API key or x402): `https://api.aurelianflo.com/mcp`
 - Server card: `https://api.aurelianflo.com/.well-known/mcp/server-card.json`
 - Documentation: `https://api.aurelianflo.com/mcp/docs`
 - Privacy: `https://api.aurelianflo.com/mcp/privacy`
@@ -52,8 +53,12 @@ Claude Custom Connector:
 4. Use this MCP server URL:
 
 ```text
-https://api.aurelianflo.com/mcp
+https://api.aurelianflo.com/mcp/account
 ```
+
+5. Sign in with your email and enter the 6-digit code you are sent. Signing in
+   creates a free account with a monthly usage allowance (currently $5), which
+   paid tools draw from.
 
 Claude Desktop does not use `claude_desktop_config.json` for remote MCP
 servers.
@@ -64,12 +69,15 @@ Direct Codex MCP install:
 codex mcp add aurelianflo --url https://api.aurelianflo.com/mcp
 ```
 
-The direct endpoint is operated by AurelianFlo. No sign-in is required to
-connect. Call `server_capabilities` to verify the connection for free; it also
-lists current prices, the ways to pay, and sample responses.
+Both endpoints are operated by AurelianFlo. The direct endpoint
+(`https://api.aurelianflo.com/mcp`) needs no sign-in to connect. Call
+`server_capabilities` to verify the connection for free; it also lists current
+prices, the ways to pay, and sample responses.
 
 ## Trying and Paying
 
+- **Sign in:** connect to `https://api.aurelianflo.com/mcp/account` and sign in
+  with your email. Paid tools draw from your free monthly allowance.
 - **Free test inputs:** calls that use only the test addresses published in
   `server_capabilities` run free, with real results marked `mode: "test"`.
 - **API key:** send `Authorization: Bearer afk_...` with each request. Keys are
