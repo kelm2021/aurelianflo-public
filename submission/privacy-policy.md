@@ -5,16 +5,25 @@ HTTP endpoints.
 
 ## Data Collected
 
-- Tool input payloads required to execute compliance screening, vendor due
-  diligence, simulation reporting, and document generation
+- Tool input payloads required to execute compliance screening, enhanced due
+  diligence memos, exposure forecasts, review queues, and document generation
+- Account data, if you sign in: your email address, an account ID, and your
+  usage and charges against your free allowance or credits. API keys and
+  sign-in tokens are stored only as one-way hashes
+- Saved results, only when you ask for them (`save: true` or an account
+  setting): the result data, its provenance, and any generated document
+- Watchlists, if you create one: the watched wallet addresses, their labels,
+  and your webhook URL and its signing secret
 - Operational logs required for uptime, debugging, abuse prevention, and billing
-  reconciliation
+  reconciliation, plus daily usage counts (sign-ups, active accounts, accounts
+  at their limit)
 - Payment metadata required by x402 settlement flows
 
 ## Data Minimization
 
 - We collect only the data required to execute the requested tool call and
   support the service
+- Results are not kept unless you save them
 - We do not intentionally collect unrelated conversation history beyond the MCP
   payload sent to the server
 
@@ -22,6 +31,8 @@ HTTP endpoints.
 
 - To execute the requested MCP tool call
 - To return structured tool results and document artifacts
+- To sign you in, track your allowance, and send sign-in codes and watchlist
+  alerts
 - To monitor uptime, prevent abuse, and investigate failures
 - To reconcile paid usage and settlement events
 
@@ -29,14 +40,22 @@ HTTP endpoints.
 
 - Data may be processed by infrastructure and payment providers necessary to
   execute the service
+- Sign-in codes and alert emails are sent through our email provider (Resend)
+- For indirect exposure checks, the screened wallet address and its
+  counterparties are looked up through a blockchain indexer (Blockscout)
+- Watchlist alerts are sent to the webhook URL and email address you configure
 - Data is not sold for advertising purposes
 
-## Retention
+## Retention and Deletion
 
+- Saved results are kept for 365 days by default (configurable per account from
+  1 day to 7 years) and can be deleted at any time with the `saved_results` tool
+- Sign-in codes expire after 10 minutes, access tokens after 1 hour, and refresh
+  tokens after 30 days
+- To delete your account, email address, saved results, and watchlist, contact
+  `support@aurelianflo.com`
 - Operational logs and request records are retained only as long as needed for
   reliability, billing, fraud prevention, and compliance
-- Retention windows are governed by operational necessity and infrastructure
-  constraints
 
 ## Contact
 
