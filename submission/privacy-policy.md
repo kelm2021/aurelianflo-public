@@ -42,14 +42,18 @@ HTTP endpoints.
   execute the service
 - Sign-in codes and alert emails are sent through our email provider (Resend)
 - For indirect exposure checks, the screened wallet address and its
-  counterparties are looked up through a blockchain indexer (Blockscout)
+  counterparties are looked up through a blockchain indexer (Blockscout for
+  EVM chains, TronGrid for TRON, Blockstream for Bitcoin)
 - Watchlist alerts are sent to the webhook URL and email address you configure
 - Data is not sold for advertising purposes
 
 ## Retention and Deletion
 
 - Saved results are kept for 365 days by default (configurable per account from
-  1 day to 7 years) and can be deleted at any time with the `saved_results` tool
+  1 day to 7 years) and can be deleted at any time with the `saved_results_delete` tool
+- A generated PDF or DOCX is held for 15 minutes behind a private, unguessable
+  download link and then deleted. Anyone with the link can download the file
+  during that time
 - Sign-in codes expire after 10 minutes, access tokens after 1 hour, and refresh
   tokens after 30 days
 - To delete your account, email address, saved results, and watchlist, contact
