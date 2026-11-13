@@ -6,7 +6,7 @@ HTTP endpoints.
 ## Data Collected
 
 - Tool input payloads required to execute compliance screening, enhanced due
-  diligence memos, exposure forecasts, review queues, and document generation
+  diligence memos, exposure reports, review queues, and document generation
 - Account data, if you sign in: your email address, an account ID, and your
   usage and charges against your free allowance or credits. API keys and
   sign-in tokens are stored only as one-way hashes

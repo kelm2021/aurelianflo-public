@@ -30,9 +30,12 @@ private repository.
   counterparties
 - `compliance_edd_report`: enhanced due diligence memo with wallet and
   subject-name screening
-- `compliance_exposure_forecast`: OFAC exposure forecast with base rates and
-  model limitations
-- `compliance_queue_optimize`: review queue prioritization
+- `compliance_exposure_report`: evidence of exposure for up to 20 wallets.
+  Each is reported as listed now, with transfers sent to or received from
+  listed addresses, none found in what was read, or not established. It does
+  not predict future listings. $0.04 per wallet
+- `compliance_queue_optimize`: review queue that puts wallets listed now
+  first and orders the rest by your exposure and relationship figures
 - `screening_verify` (free): check that a stored result is authentic and
   unchanged
 - `saved_results` (account, free): list or fetch results saved with
@@ -48,8 +51,10 @@ private repository.
 
 Older tool names (`wallet_ofac_screen`, `wallet_ofac_report`,
 `wallet_ofac_batch`, `report_pdf_generate`, `report_docx_generate`,
-`queue_saved_list`, `report_saved_retrieve`) still work but are no longer
-listed.
+`queue_saved_list`, `report_saved_retrieve`, `compliance_exposure_forecast`)
+still work but are no longer listed. `compliance_exposure_forecast` now
+returns the exposure report: the forecast it used to return was not a real
+probability and has been retired.
 
 ## Install
 
