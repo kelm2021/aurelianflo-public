@@ -35,10 +35,16 @@ private repository.
 - `compliance_queue_optimize`: review queue prioritization
 - `screening_verify` (free): check that a stored result is authentic and
   unchanged
-- `saved_results` (account): list, fetch, or delete results saved with
-  `save: true`
-- `wallet_watchlist` (account): watch wallets and get alerted when one is
+- `saved_results` (account, free): list or fetch results saved with
+  `save: true`. Read-only
+- `saved_results_delete` (account, free): permanently delete one saved result
+- `wallet_watchlist` (account, free): show the watched wallets and alert
+  settings. Read-only
+- `wallet_watchlist_add` (account): watch wallets and get alerted when one is
   designated
+- `wallet_watchlist_remove` (account, free): stop watching wallets
+- `wallet_watchlist_alerts` (account, free): set the alert webhook and email
+  alerts
 
 Older tool names (`wallet_ofac_screen`, `wallet_ofac_report`,
 `wallet_ofac_batch`, `report_pdf_generate`, `report_docx_generate`,
