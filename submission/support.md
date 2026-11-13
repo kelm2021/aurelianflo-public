@@ -17,7 +17,7 @@ HTTP endpoints.
 - Payment and settlement issues related to x402 tool calls
 - Unexpected tool failures or invalid responses
 - Questions about supported inputs for wallet screening, enhanced due diligence
-  memos, exposure forecasts, review queues, saved results, and watchlists
+  memos, exposure reports, review queues, saved results, and watchlists
 
 ## Response Expectations
 
