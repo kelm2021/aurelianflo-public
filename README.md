@@ -22,8 +22,8 @@ private repository.
 
 ## MCP Tools
 
-- `server_capabilities` (free): connection check, prices, how to pay, free test
-  inputs, and sample responses
+- `server_capabilities` (free): connection check, your daily limits (or prices
+  without an account), free test inputs, and sample responses
 - `wallet_screen`: screen 1-100 wallets against OFAC lists, with address
   validation, a proceed-or-review decision, and signed provenance. Optional
   PDF/DOCX report and, for one EVM wallet, indirect exposure through
@@ -33,7 +33,7 @@ private repository.
 - `compliance_exposure_report`: evidence of exposure for up to 20 wallets.
   Each is reported as listed now, with transfers sent to or received from
   listed addresses, none found in what was read, or not established. It does
-  not predict future listings. $0.04 per wallet
+  not predict future listings
 - `compliance_queue_optimize`: review queue that puts wallets listed now
   first and orders the rest by your exposure and relationship figures
 - `screening_verify` (free): check that a stored result is authentic and
@@ -43,8 +43,8 @@ private repository.
 - `saved_results_delete` (account, free): permanently delete one saved result
 - `wallet_watchlist` (account, free): show the watched wallets and alert
   settings. Read-only
-- `wallet_watchlist_add` (account): watch wallets and get alerted when one is
-  designated
+- `wallet_watchlist_add` (account, free): watch up to 25 wallets and get
+  alerted when one is designated
 - `wallet_watchlist_remove` (account, free): stop watching wallets
 - `wallet_watchlist_alerts` (account, free): set the alert webhook and email
   alerts
@@ -70,8 +70,8 @@ https://api.aurelianflo.com/mcp/account
 ```
 
 5. Sign in with your email and enter the 6-digit code you are sent. Signing in
-   creates a free account with a monthly usage allowance (currently $5), which
-   paid tools draw from.
+   creates a free account. Every tool is free on an account, within daily
+   limits.
 
 Claude Desktop does not use `claude_desktop_config.json` for remote MCP
 servers.
@@ -84,21 +84,26 @@ codex mcp add aurelianflo --url https://api.aurelianflo.com/mcp
 
 Both endpoints are operated by AurelianFlo. The direct endpoint
 (`https://api.aurelianflo.com/mcp`) needs no sign-in to connect. Call
-`server_capabilities` to verify the connection for free; it also lists current
-prices, the ways to pay, and sample responses.
+`server_capabilities` to verify the connection for free; it also lists your
+daily limits (or prices without an account) and sample responses.
 
-## Trying and Paying
+## Free Use and Paying per Call
 
 - **Sign in:** connect to `https://api.aurelianflo.com/mcp/account` and sign in
-  with your email. Paid tools draw from your free monthly allowance.
+  with your email. Every tool is then free. Each account has daily limits that
+  reset at 00:00 UTC: 100 screened addresses, 10 due diligence memos, 20
+  wallets read for exposure, 10 review queue runs and 10 PDF or Word files. A
+  failed run does not count.
 - **Free test inputs:** calls that use only the test addresses published in
   `server_capabilities` run free, with real results marked `mode: "test"`.
-- **API key:** send `Authorization: Bearer afk_...` with each request. Keys are
-  issued on request through support.
-- **x402:** use an x402-capable client and wallet to authorize USDC payments on
-  Base. Payment settles only when the tool succeeds.
+- **API key:** send `Authorization: Bearer afk_...` with each request. Calls
+  are free within the same daily limits. Keys are issued on request through
+  support.
+- **x402:** for agents with no account. Use an x402-capable client and wallet
+  to pay per call in USDC on Base. Payment settles only when the tool succeeds.
 
-Adding an MCP connection alone does not enable paid execution.
+Without an account, adding an MCP connection alone does not enable the priced
+tools.
 
 AgentCash discovery:
 

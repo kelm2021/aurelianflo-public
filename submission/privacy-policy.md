@@ -8,7 +8,7 @@ HTTP endpoints.
 - Tool input payloads required to execute compliance screening, enhanced due
   diligence memos, exposure reports, review queues, and document generation
 - Account data, if you sign in: your email address, an account ID, and your
-  usage and charges against your free allowance or credits. API keys and
+  usage against your daily limits. API keys and
   sign-in tokens are stored only as one-way hashes
 - Saved results, only when you ask for them (`save: true` or an account
   setting): the result data, its provenance, and any generated document
@@ -31,7 +31,7 @@ HTTP endpoints.
 
 - To execute the requested MCP tool call
 - To return structured tool results and document artifacts
-- To sign you in, track your allowance, and send sign-in codes and watchlist
+- To sign you in, track your daily limits, and send sign-in codes and watchlist
   alerts
 - To monitor uptime, prevent abuse, and investigate failures
 - To reconcile paid usage and settlement events
