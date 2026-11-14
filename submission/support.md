@@ -12,7 +12,7 @@ HTTP endpoints.
 ## Support Scope
 
 - Connection and configuration issues
-- Sign-in, account, free allowance, and API key questions, including account
+- Sign-in, account, daily limit, and API key questions, including account
   deletion
 - Payment and settlement issues related to x402 tool calls
 - Unexpected tool failures or invalid responses
