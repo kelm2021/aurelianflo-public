@@ -1,18 +1,22 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.aurelianflo/core",
-  "title": "AurelianFlo",
-  "description": "OFAC wallet screening, EDD memos, exposure reports, review queues and watchlists. Free with sign-in.",
+  "title": "AurelianFlo: Sanctions Screening for Crypto Wallets and Names",
+  "description": "OFAC wallet and name screening, EDD memos, exposure reports, review queues, watchlists. Free to use.",
   "repository": {
     "url": "https://github.com/kelm2021/aurelianflo-public",
     "source": "github",
     "subfolder": "submission"
   },
-  "version": "0.8.0",
+  "version": "0.9.0",
   "remotes": [
     {
       "type": "streamable-http",
       "url": "https://api.aurelianflo.com/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://api.aurelianflo.com/mcp/account"
     }
   ]
 }
