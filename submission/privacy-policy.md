@@ -23,7 +23,13 @@ HTTP endpoints.
 
 - We collect only the data required to execute the requested tool call and
   support the service
-- Results are not kept unless you save them
+- Results are not saved unless you ask us to save them. For signed-in accounts,
+  a copy of each new result is held for 15 minutes so that it can be saved. A
+  generated PDF or DOCX is held for 15 minutes behind a private link and then
+  deleted
+- We do not knowingly collect data from children. The service is for business
+  and developer use by people aged 18 or over. If we learn that we hold a
+  child's data, we delete it
 - We do not intentionally collect unrelated conversation history beyond the MCP
   payload sent to the server
 
@@ -50,7 +56,7 @@ HTTP endpoints.
 ## Retention and Deletion
 
 - Saved results are kept for 365 days by default (configurable per account from
-  1 day to 7 years) and can be deleted at any time with the `saved_results_delete` tool
+  1 day to 11 years) and can be deleted at any time with the `saved_results_delete` tool
 - A generated PDF or DOCX is held for 15 minutes behind a private, unguessable
   download link and then deleted. Anyone with the link can download the file
   during that time
